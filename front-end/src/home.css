@@ -1,101 +1,119 @@
+/* Home.css */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.home {
-    max-width: 400px;
-    min-height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f3f3f3;
-    padding-bottom: 70px;
-}
-
-.header {
+.container {
     width: 100%;
-    background-color: #292937;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
-    text-align: center;
-    border-bottom: 5px solid #FFCA77;
+    background-color: #f5f5f5;
 }
 
-.title {
-    font-size: 1.8rem;
-    color: #292937;
+.greeting {
+    font-size: 24px;
     font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .analytics-section {
-    width: 90%;
-    background-color: white;
-    border: 5px solid #FFCA77;
-    border-radius: 15px;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-.analytics-content p {
-    font-size: 1rem;
-    color: #292937;
-    margin-bottom: 8px;
-}
-
-.options {
     display: flex;
-    justify-content: space-around;
-    width: 90%;
-    margin-top: 15px;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #f9a825;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.analytics-icon {
+    font-size: 20px;
+    color: #f9a825;
+    margin-right: 15px;
+}
+
+.analytics-info p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.amount {
+    font-weight: bold;
+    color: #333;
+}
+
+.options-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .option-button {
-    padding: 8px 12px;
-    background-color: #ffffff;
-    border: 2px solid #FFCA77;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 2px solid #f9a825;
     border-radius: 20px;
-    color: #292937;
-    font-weight: bold;
+    margin: 0 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 .option-button:hover {
-    background-color: #FFDD77;
+    background-color: #f9a825;
+    color: #fff;
 }
 
 .accounts-section {
-    width: 90%;
-    margin-top: 20px;
-    background-color: #FFFFFF;
-    border: 2px solid #FFCA77;
-    border-radius: 10px;
     padding: 15px;
+    border: 2px solid #f9a825;
+    border-radius: 10px;
+    background-color: #fff;
 }
 
-.accounts-section h2 {
-    font-size: 1.2rem;
-    color: #292937;
+.section-title {
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #333;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.account-card {
-    display: flex;
-    justify-content: space-between;
+.account {
     padding: 10px 0;
-    border-bottom: 1px solid #FFCA77;
+    border-bottom: 1px solid #ddd;
 }
 
-.account-card:last-child {
+.account:last-child {
     border-bottom: none;
 }
 
-.balance {
-    font-size: 1.1rem;
-    color: #FFCA77;
+.account-type {
+    font-size: 16px;
+    color: #333;
     font-weight: bold;
+}
+
+.account-balance {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.balance-label {
+    font-size: 12px;
+    color: #888;
 }

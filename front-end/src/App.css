@@ -10,37 +10,38 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Main content area */
+.main-content {
+  padding-top: 60px; /* Leave space for the fixed header */
+  padding-bottom: 60px; /* Leave space for the fixed footer */
+  min-height: calc(100vh - 120px); /* Account for both header and footer height */
+  overflow-y: auto; /* Enable scrolling for content */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Footer as Nav-Bar */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set a consistent height */
+  background-color: var(--dark-color);
+  color: var(--light-color);
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 100; /* Ensure it stays on top */
 }
 
-.App-link {
-  color: #61dafb;
+.footer a {
+  color: var(--light-color);
+  text-decoration: none;
+  font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Optional gradient border styling */
+.border-gradient {
+  border: 3px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  border-image-source: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
