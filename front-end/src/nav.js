@@ -8,16 +8,16 @@ const NavigationBar = () => {
     return (
         <footer className="nav-bar">
             <button className="nav-icon" onClick={() => navigate('/')}>
-                <img src="\icons\home_Icon.png" alt="Home" />
+                <img src="\icons\home_icon.png" alt="Home" />
             </button>
             <button className="nav-icon" onClick={() => navigate('/persona')}>
-                <img src="icons/placeholder.png" alt="Persona" />
+                <img src="\icons\persona_icon.png" alt="Persona" />
             </button>
             <button className="nav-icon" onClick={() => navigate('/analytics')}>
-                <img src="icons/placeholder.png" alt="Analytics" />
+                <img src="\icons\analytics_icon.png" alt="Analytics" />
             </button>
             <button className="nav-icon" onClick={() => navigate('/extra')}>
-                <img src="icons/placeholder.png" alt="Extra" />
+                <img src="\icons\extras_icon.png" alt="Extra" />
             </button>
         </footer>
     );
