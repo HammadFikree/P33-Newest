@@ -2,20 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './checking.css';
 
 const Checking = () => {
-    const [transactions, setTransactions] = useState([]); // State to store transactions
-    const [balance, setBalance] = useState(null); // Store balance for display
+    const [transactions, setTransactions] = useState([]);
+    const [balance, setBalance] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:8080/transactions/1')
             .then(response => response.json())
             .then(data => {
-                // Sort transactions by date in descending order
+            
                 const sortedTransactions = data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 
-                // Set the sorted transactions in state
                 setTransactions(sortedTransactions);
 
-                // Update balance with the latest transaction's balance
                 if (sortedTransactions.length > 0) {
                     setBalance(sortedTransactions[0].balance);
                 }
@@ -25,14 +23,14 @@ const Checking = () => {
 
     return (
         <div className="account-container">
-            
+
             <div className="balance-overview">
                 <p className="balance-amount">${balance !== null ? balance : 'Loading...'}</p>
                 <p className="balance-label">Available Balance</p>
             </div>
 
             <div className="transactions-section">
-                <h3 className="transactions-title">Transactions by Date</h3>
+                <h3 className="transactions-title">Transactions</h3>
                 <div className="transaction-list">
                     {transactions.map((transaction, index) => (
                         <div key={index} className="transaction-item">

@@ -61,8 +61,8 @@ function App() {
                         </Layout>
                     }
                 />
-                <Route path="/analytics" element={<Layout> {/* Analytics Component */} </Layout>} />
-                <Route path="/extra" element={<Layout> {/* Extra Features Component */} </Layout>} />
+                <Route path="/analytics" element={<Layout> {/* Analytics */} </Layout>} />
+                <Route path="/extra" element={<Layout> {/* Extra Features */} </Layout>} />
             </Routes>
         </Router>
     );

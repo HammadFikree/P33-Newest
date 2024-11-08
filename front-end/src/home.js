@@ -43,7 +43,7 @@ const Home = () => {
         <div className="container">
             <h1 className="greeting">Hello NAME</h1>
 
-            {/* Analytics Section */}
+            {/* Analytics */}
             <div className="analytics-section">
                 <div className="analytics-icon">
                     <span>Analytics</span>
@@ -56,7 +56,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Bank Accounts Section */}
+            {/* Bank Accounts */}
             <div className="accounts-section">
                 <h2 className="section-title">Bank Accounts</h2>
                 <div className="account" onClick={handleAccountClick}>
