@@ -22,6 +22,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'com.h2database:h2'
+	implementation 'com.opencsv:opencsv:5.5.2'
 }
 
 tasks.named('test') {

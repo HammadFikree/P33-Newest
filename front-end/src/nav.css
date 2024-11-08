@@ -16,8 +16,8 @@
     border: none;
     cursor: pointer;
 }
-
 .nav-icon img {
-    width: 24px;
     height: 24px;
+    width: auto;
+    max-width: 100%;
 }
