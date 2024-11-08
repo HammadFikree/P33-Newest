@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './home.css';
 
 const Home = () => {
     const navigate = useNavigate();
+    const [balance, setBalance] = useState(null);
+    const [moneyIn, setMoneyIn] = useState(0);
+    const [moneyOut, setMoneyOut] = useState(0);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/transactions/1')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const latestBalance = data[data.length - 1].balance;
+                    setBalance(latestBalance);
+
+                
+                    let totalIn = 0;
+                    let totalOut = 0;
+                    data.forEach(transaction => {
+                        const amount = parseFloat(transaction.amount.replace(/,/g, ''));
+                        if (transaction.type === 'DEPOSIT') {
+                            totalIn += amount;
+                        } else {
+                            totalOut += Math.abs(amount);
+                        }
+                    });
+
+                    setMoneyIn(totalIn.toFixed(2));
+                    setMoneyOut(totalOut.toFixed(2));
+                }
+            })
+            .catch(error => console.error('Error fetching transactions:', error));
+    }, []);
 
     const handleAccountClick = () => {
         navigate('/checking');
@@ -11,28 +41,19 @@ const Home = () => {
 
     return (
         <div className="container">
-            {/* Greeting Section */}
             <h1 className="greeting">Hello NAME</h1>
 
             {/* Analytics Section */}
             <div className="analytics-section">
                 <div className="analytics-icon">
-                    {/* Placeholder for icon, can be replaced with an actual icon in CSS */}
                     <span>Analytics</span>
                 </div>
                 <div className="analytics-info">
-                    <p>Money in this month</p>
-                    <p className="amount">#####.##</p>
-                    <p>Money in this month</p>
-                    <p className="amount">#####.##</p>
+                    <p>Money In This Month</p>
+                    <p className="amount">${moneyIn}</p>
+                    <p>Money Out This Month</p>
+                    <p className="amount">${moneyOut}</p>
                 </div>
-            </div>
-
-            {/* Options Section */}
-            <div className="options-section">
-                <button className="option-button">Option #1</button>
-                <button className="option-button">Option #1</button>
-                <button className="option-button">Option #1</button>
             </div>
 
             {/* Bank Accounts Section */}
@@ -40,22 +61,7 @@ const Home = () => {
                 <h2 className="section-title">Bank Accounts</h2>
                 <div className="account" onClick={handleAccountClick}>
                     <p className="account-type">Checking (...0000)</p>
-                    <p className="account-balance">$0000.00</p>
-                    <p className="balance-label">Available Balance</p>
-                </div>
-                <div className="account" onClick={handleAccountClick}>
-                    <p className="account-type">Savings (...0000)</p>
-                    <p className="account-balance">$0000.00</p>
-                    <p className="balance-label">Available Balance</p>
-                </div>
-                <div className="account" onClick={handleAccountClick}>
-                    <p className="account-type">Checking (...0000)</p>
-                    <p className="account-balance">$0000.00</p>
-                    <p className="balance-label">Available Balance</p>
-                </div>
-                <div className="account" onClick={handleAccountClick}>
-                    <p className="account-type">Checking (...0000)</p>
-                    <p className="account-balance">$0000.00</p>
+                    <p className="account-balance">${balance !== null ? balance : 'Loading...'}</p>
                     <p className="balance-label">Available Balance</p>
                 </div>
             </div>
