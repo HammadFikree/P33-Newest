@@ -18,7 +18,7 @@ const NavigationBar = () => {
             <button className="nav-icon" onClick={() => navigate('/persona')}>
                 <img src={personaIcon} alt="Persona" />
             </button>
-            <button className="nav-icon" onClick={() => navigate('/analytics')}>
+            <button className="nav-icon" onClick={() => navigate('/money_flow')}>
                 <img src={analyticsIcon} alt="Analytics" />
             </button>
             <button className="nav-icon" onClick={() => navigate('/extra')}>

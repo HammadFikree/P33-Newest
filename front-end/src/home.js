@@ -15,25 +15,36 @@ const Home = () => {
                 if (data.length > 0) {
                     const latestBalance = data[data.length - 1].balance;
                     setBalance(latestBalance);
-
-                
+    
+                    const lastTransactionDate = new Date(data[data.length - 1].date);
+                    const latestYear = lastTransactionDate.getFullYear();
+                    const latestMonth = lastTransactionDate.getMonth();
+    
                     let totalIn = 0;
                     let totalOut = 0;
+    
                     data.forEach(transaction => {
+                        const transactionDate = new Date(transaction.date);
                         const amount = parseFloat(transaction.amount.replace(/,/g, ''));
-                        if (transaction.type === 'DEPOSIT') {
-                            totalIn += amount;
-                        } else {
-                            totalOut += Math.abs(amount);
+    
+                        if (
+                            transactionDate.getFullYear() === latestYear &&
+                            transactionDate.getMonth() === latestMonth
+                        ) {
+                            if (transaction.type === 'DEPOSIT') {
+                                totalIn += amount;
+                            } else {
+                                totalOut += Math.abs(amount);
+                            }
                         }
                     });
-
+    
                     setMoneyIn(totalIn.toFixed(2));
                     setMoneyOut(totalOut.toFixed(2));
                 }
             })
             .catch(error => console.error('Error fetching transactions:', error));
-    }, []);
+    }, []);    
 
     const handleAccountClick = () => {
         navigate('/checking');

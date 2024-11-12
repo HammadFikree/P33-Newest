@@ -7,6 +7,7 @@ import Header from './header';
 import Footer from './nav';
 import Checking from './checking';
 import Persona from './persona';
+import MoneyFlow from './money_flow';
 import Extra from './extra';
 
 function App() {
@@ -50,6 +51,14 @@ function App() {
                     element={
                         <Layout>
                             <Persona />
+                        </Layout>
+                    }
+                />
+                <Route
+                    path="/money_flow"
+                    element={
+                        <Layout>
+                            <MoneyFlow />
                         </Layout>
                     }
                 />
