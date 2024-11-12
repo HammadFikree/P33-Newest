@@ -61,9 +61,7 @@ const MoneyFlow = () => {
 
     return (
         <div className="money-flow-container">
-            <h2>Money Flow</h2>
 
-            {/* Monthly Cash Flow Bar Chart */}
             <div className="chart-container">
                 <h3>Monthly Cash Flow</h3>
                 <ResponsiveContainer width="100%" height={300}>
@@ -72,24 +70,22 @@ const MoneyFlow = () => {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="deposits" fill="#82ca9d" name="Deposits" />
-                        <Bar dataKey="expenses" fill="#ff0000" name="Expenses" />
+                        <Bar dataKey="deposits" fill="#FFCA77" name="Deposits" />
+                        <Bar dataKey="expenses" fill="#011C27" name="Expenses" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
 
-            {/* Category Breakdown Pie Chart */}
             <div className="chart-container">
                 <h3>Category Breakdown</h3>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={categoryBreakdownData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#82ca9d" label />
+                        <Pie data={categoryBreakdownData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#FFCA77" label />
                         <Tooltip />
                     </PieChart>
                 </ResponsiveContainer>
             </div>
 
-            {/* Savings vs. Spending Trend Line Chart */}
             <div className="chart-container">
                 <h3>Savings vs. Spending Trend</h3>
                 <ResponsiveContainer width="100%" height={300}>
@@ -99,8 +95,8 @@ const MoneyFlow = () => {
                         <Tooltip />
                         <Legend />
                         <CartesianGrid strokeDasharray="3 3" />
-                        <Line type="monotone" dataKey="savings" stroke="#82ca9d" name="Savings" />
-                        <Line type="monotone" dataKey="spending" stroke="#ff0000" name="Spending" />
+                        <Line type="monotone" dataKey="savings" stroke="#FFCA77" name="Savings" />
+                        <Line type="monotone" dataKey="spending" stroke="#011C27" name="Spending" />
                     </LineChart>
                 </ResponsiveContainer>
             </div>
