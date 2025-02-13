@@ -1,4 +1,4 @@
-# Discover Finance Tracker - p33 Project 💳📊
+# Discover Finance Tracker - P33 Project 💳📊
 
 ### Team Name: Apple by the Windows
 
