@@ -1,5 +1,7 @@
 # Discover Finance Tracker - p33 Project 💳📊
 
+### Team Name: Apple by the Windows
+
 Developed by:
 - **Hammad Fikree**
 - **Never Hills**
